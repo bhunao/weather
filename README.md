@@ -1,1 +1,1 @@
-- [docs](./docs/architecture.md)
+- [docs](./docs/architecture-01.md)
