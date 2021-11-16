@@ -9,12 +9,12 @@ class Cache:
                 self.keys.discard(key)
         return [*self.keys]
 
-    def get(self, k): # _ should  be private?
+    def get(self, k):
         if not self.cache.has(k):
             return None
         return self.cache.get(k)
 
-    def set(self, k, v): # _ should  be private?
+    def set(self, k, v):
         if not self.cache.has(k):
             self.keys += k,
             self.cache.set(k, v)
