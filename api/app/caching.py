@@ -1,5 +1,4 @@
-from functools import wraps
-class My_Cache:
+class Cache:
     def __init__(self, cache):
         self.keys = tuple()
         self.cache = cache.cache
@@ -19,12 +18,3 @@ class My_Cache:
         if not self.cache.has(k):
             self.keys += k,
             self.cache.set(k, v)
-
-    def wrapper(func):
-        @wraps(func)
-        def wrap(self, *args, **kwargs):
-            a = (*args, *kwargs)
-            if not self.get(a):
-                self.set(k)
-            return func(*args, **kwargs)
-        return wrap

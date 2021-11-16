@@ -1,22 +1,19 @@
 import requests
 
-from datetime import datetime
+from . import schemas, endpoint, key
 
-from pprint import pprint
 
-import schemas
+KEY = "dc0f09091ff236e4d77bbba9310879ec"
 
-def get_data(city: str) -> schemas.Model:
-    KEY = "dc0f09091ff236e4d77bbba9310879ec"
-    URL = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={KEY}"
+def get_data(city: str, endpoint, key=KEY) -> schemas.Model:
+    URL = endpoint.format(city=city, key=key)
     response = requests.get(URL)
     return response.json()
 
 def transform_data(data: schemas.Model) -> schemas.Weather:
     if data.get("main")  is None:
-        return {"message": "sum ting wong"}
+        return "error"
     output = dict()
-    output['now'] = datetime.now()
     output['min'] = data.get('main').get('temp_min')
     output['max'] = data.get('main').get('temp_max')
     output['avg'] = data.get('main').get('temp')
