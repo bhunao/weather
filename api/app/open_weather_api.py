@@ -3,9 +3,7 @@ import requests
 from . import schemas, endpoint, key
 
 
-KEY = "dc0f09091ff236e4d77bbba9310879ec"
-
-def get_data(city: str, endpoint, key=KEY) -> schemas.Model:
+def get_data(city: str, endpoint, key) -> schemas.Model:
     URL = endpoint.format(city=city, key=key)
     response = requests.get(URL)
     return response.json()
