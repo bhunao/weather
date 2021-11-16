@@ -10,8 +10,8 @@ config.read('config.ini')
 
 endpoint = config['OPENWEATERAPI']['endpoint']
 key = config['OPENWEATERAPI']['key']
-cache_ttl = os.environ.get('CACHE_TTL', 300)
-default_max_number = os.environ.get('DEFAULT_MAX_NUMBER', 5)
+cache_ttl = int(os.environ.get('CACHE_TTL', 300))
+default_max_number = int(os.environ.get('DEFAULT_MAX_NUMBER', 5))
 
 def create_app():
     config = {
