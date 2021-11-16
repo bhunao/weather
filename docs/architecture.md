@@ -8,13 +8,13 @@ Wrapper for the [Open Weather API current weather data service](https://openweat
 
 ## Technologies and Frameworks
 
-- Python 3.?
+- Python 3.8+
 - Flask
-    - -some-flask-plugins
-- ?Docker
-- pyTest or unitTest
-- Schematics or pyDantic
-- ?flask-caching
+- Flask-Caching
+- Python Venv
+- pyTest
+- PyDantic
+- Requests
 
 ## Endpoints
 
@@ -27,9 +27,9 @@ PATH    |   METHOD  |   DESCRIPTION
 
 ## Cache
 
-- Cache should have a configurable **cache_ttl**, after which cached entries are no longer
+- Cache has a configurable **cache\_ttl**, after which cached entries are no longer
 valid to be returned by either endpoints;
--  **cache_ttl** and **default_max_number** should be service configurations retrieved from
+-  **cache_ttl** and **default_max_number** are service configurations retrieved from
 environment variables, if such data is available, or defaulting to 5 minutes and 5 entries
 respectively otherwise;
 
