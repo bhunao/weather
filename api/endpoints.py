@@ -11,7 +11,7 @@ api, mycache = create_app()
 @api.route('/temperature/<city>', methods=['GET'])
 def get_weather(city: str):
     weather = mycache.get(city)
-    if result is None:
+    if weather is None:
         data = open_weather_api.get_data(city, endpoint=endpoint, key=key)
         weather = open_weather_api.transform_data(data)
         if weather == "error":
