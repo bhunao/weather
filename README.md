@@ -1,5 +1,7 @@
 # How to run this Application
 
+First go to the project folder
+
 ## 1. Creating the virtual environment
 
 ```bash
